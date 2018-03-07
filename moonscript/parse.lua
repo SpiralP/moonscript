@@ -106,7 +106,7 @@ local build_grammar = wrap_env(debug_grammar, function(root)
   local KeyName = SelfName + Space * _Name / mark("key_literal")
   local VarArg = Space * P("...") / trim
   local g = P({
-    root or File,
+    root or 'File',
     File = Shebang ^ -1 * (Block + Ct("")),
     Block = Ct(Line * (Break ^ 1 * Line) ^ 0),
     CheckIndent = Cmt(Indent, check_indent),
